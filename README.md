@@ -1,1 +1,1 @@
-# **Ответы на задания с курса "Python for Network Engineer"!**
+# **Ответы на задания с курса "Python for Network Engineer"**

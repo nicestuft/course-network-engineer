@@ -32,3 +32,18 @@ $ python task_6_6.py
 unused
 
 """
+
+ip = input("Введите IP-адрес: ")
+
+first_octet = int(ip.split(".")[0])
+
+if 1 <= first_octet <= 223:
+	print("unicast")
+elif 224 <= first_octet <= 239:
+	print("multicast")
+elif ip == "255.255.255.255":
+	print("local broadcast")
+elif ip == "0.0.0.0":
+	print("unassigned")
+else:
+	print("unused")

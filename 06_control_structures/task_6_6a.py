@@ -45,3 +45,32 @@ $ python task_6_6a.py
 Введите IP-адрес: 50.1.1.1.1
 Неправильный IP-адрес
 """
+
+ip = input("Введите IP-адрес: ")
+correct_ip = True
+
+length_octets = len(ip.split("."))
+
+if length_octets != 4:
+	correct_ip = False
+else:
+	for octet in ip.split("."):
+		if not (octet.isdigit() and int(octet) in range(256)):
+			correct_ip = False
+		
+if not correct_ip:
+	print("Неправильный IP-адрес")
+else:
+	first_octet = int(ip.split(".")[0])
+
+	if 1 <= first_octet <= 223:
+		print("unicast")
+	elif 224 <= first_octet <= 239:
+		print("multicast")
+	elif ip == "255.255.255.255":
+		print("local broadcast")
+	elif ip == "0.0.0.0":
+		print("unassigned")
+	else:
+		print("unused")
+

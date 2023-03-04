@@ -48,5 +48,27 @@ $ python task_6_5.py
 """
 from random import randint
 
+count = 0
+
 random_number = randint(1, 9)
-# print(random_number)
+
+while count != 5:
+	guess_number = int(input("Введите число: "))
+	
+	if guess_number > random_number:
+		print("Задуманное число меньше")
+	elif guess_number < random_number:
+		print("Задуманное число больше")
+	elif guess_number == random_number:
+		print("Правильно")
+		break
+		
+	count += 1
+	
+	if count == 5:
+		print("Число не угадано после 5 попыток")
+	
+
+	
+	
+
